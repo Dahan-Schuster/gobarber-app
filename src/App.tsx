@@ -5,11 +5,15 @@ import { View, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
 import AuthRoutes from './routes';
+import colors from './styles/colors';
 
 const App: React.FC = () => (
 	<NavigationContainer>
-		<StatusBar barStyle="light-content" backgroundColor="#312e38" />
-		<View style={{ backgroundColor: '#312e98', flex: 1 }}>
+		<StatusBar
+			barStyle="light-content"
+			backgroundColor={colors.background}
+		/>
+		<View style={{ backgroundColor: colors.background, flex: 1 }}>
 			<AuthRoutes />
 		</View>
 	</NavigationContainer>
