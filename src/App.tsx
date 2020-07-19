@@ -4,7 +4,9 @@ import React from 'react';
 import { View, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
-import AuthRoutes from './routes';
+import AppProvider from './hooks';
+
+import Routes from './routes';
 import colors from './styles/colors';
 
 const App: React.FC = () => (
@@ -13,9 +15,11 @@ const App: React.FC = () => (
 			barStyle="light-content"
 			backgroundColor={colors.background}
 		/>
-		<View style={{ backgroundColor: colors.background, flex: 1 }}>
-			<AuthRoutes />
-		</View>
+		<AppProvider>
+			<View style={{ backgroundColor: colors.background, flex: 1 }}>
+				<Routes />
+			</View>
+		</AppProvider>
 	</NavigationContainer>
 );
 
